@@ -1,16 +1,86 @@
-# React + Vite
+# Eusef Karl Blancada Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio of me, Eusef Karl Blancada, a Computer Science student and aspiring software developer.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive monochrome portfolio design
+- Home introduction with profile image and social links
+- Proficiencies and skills section
+- Tuon Ta project card with a static website preview
+- Technology tags for projects
+- Contact form that opens a prefilled email draft
+- Custom `Eu` browser favicon
+- Keyboard focus states and reduced-motion support
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- CSS
+- React Icons
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Requirements
+
+- Node.js 18 or newer
+- npm
+
+### Install
+
+```bash
+npm install
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+Vite will print the local development URL in the terminal.
+
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Create a production build |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run Oxlint |
+
+## Project Structure
+
+```text
+src/
+	components/
+		About.tsx
+		Contact.tsx
+		Footer.tsx
+		Home.tsx
+		Navbar.tsx
+		Projects.tsx
+	assets/
+	App.tsx
+	index.css
+	main.tsx
+public/
+	favicon-mono.svg
+	tuonta-preview.png
+```
+
+## Contact Form
+
+The contact form uses a `mailto:` flow. Submitting the form opens the visitor's default email client with the recipient, subject, name, email, and message prefilled.
+
+## Deployment
+
+Build the project with:
+
+```bash
+npm run build
+```
+
+The generated `dist/` directory can be deployed to any static hosting provider, including Vercel, Netlify, or GitHub Pages.
