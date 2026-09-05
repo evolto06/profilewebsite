@@ -1,3 +1,4 @@
+import { FaJava } from 'react-icons/fa';
 import { SiRust, SiTypescript, SiJavascript, SiPython, SiC } from 'react-icons/si';
 
 const About = () => {
@@ -7,6 +8,7 @@ const About = () => {
     { name: 'JavaScript', Icon: SiJavascript },
     { name: 'Python', Icon: SiPython },
     { name: 'C', Icon: SiC },
+    { name: 'Java', Icon: FaJava },
   ];
 
   const skills = [
