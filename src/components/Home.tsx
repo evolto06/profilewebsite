@@ -12,8 +12,7 @@ const Home = () => {
           </p>
         </div>
         <div className="home-image-placeholder">
-          {/* Placeholder for 1x1 aspect ratio image */}
-          <div className="image-placeholder"></div>
+          <h1>Test Image Placeholder</h1>
         </div>
       </div>
       <div className="home-icons">
