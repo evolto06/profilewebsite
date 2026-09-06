@@ -37,6 +37,7 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -444,10 +445,20 @@ a:focus-visible {
 }
 
 .nav-logo {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-foreground);
+  cursor: pointer;
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.06em;
+}
+
+.nav-logo:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 5px;
 }
 
 .nav-logo::before {
@@ -1048,21 +1059,32 @@ a:focus-visible {
   }
 
   .nav-menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    display: none;
+    width: min(12rem, calc(100vw - 2rem));
+    margin: 0;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: rgba(5, 5, 5, 0.96);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
     flex-direction: column;
-    align-items: center;
-    padding: 2rem 0;
+    align-items: stretch;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
   }
 
   .nav-item {
-    margin: 1rem 0;
+    margin: 0;
   }
 
   .nav-link {
+    width: 100%;
+    justify-content: flex-start;
     font-size: 0.8rem;
     letter-spacing: 0.16em;
   }
