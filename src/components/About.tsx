@@ -15,6 +15,8 @@ const About = () => {
     { title: 'Full Stack Development', description: 'Experience in building both frontend and backend applications.' },
     { title: 'Embedded Systems', description: 'Working with microcontrollers and embedded Linux.' },
     { title: 'Agentic Coding', description: 'Utilizing AI agents to assist in code generation and debugging.' },
+    { title: 'AI Engineering', description: 'Designing practical AI-powered tools and workflows.' },
+    { title: 'Machine Learning', description: 'Building and applying models to learn from data.' },
   ];
 
   return (

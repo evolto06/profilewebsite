@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 
 const Contact = () => {
-  const [status, setStatus] = useState<'idle' | 'opened' | 'blocked'>('idle');
+  const [status, setStatus] = useState<'idle' | 'opened'>('idle');
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -13,10 +13,9 @@ const Contact = () => {
     const subject = `Portfolio message from ${name}`;
     const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=eusefkarl@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    const draftWindow = window.open(gmailUrl, '_blank', 'noopener,noreferrer');
-
-    setStatus(draftWindow ? 'opened' : 'blocked');
+    const mailtoUrl = `mailto:eusefkarl@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+    setStatus('opened');
   };
 
   return (
@@ -38,10 +37,9 @@ const Contact = () => {
             <textarea id="message" name="message" rows={6} required />
           </div>
           <button type="submit" className="email-link">
-            Open Gmail Draft
+            Open email app
           </button>
-          {status === 'opened' && <p className="form-note" aria-live="polite">Your Gmail draft is ready to send.</p>}
-          {status === 'blocked' && <p className="form-note" aria-live="polite">Your browser blocked the draft window. Allow pop-ups and try again.</p>}
+          {status === 'opened' && <p className="form-note" aria-live="polite">Your email app should open with the message ready to send.</p>}
         </form>
         <a href="mailto:eusefkarl@gmail.com" className="direct-email">
           eusefkarl@gmail.com

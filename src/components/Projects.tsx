@@ -29,18 +29,6 @@ const Projects = () => {
       techStack: ['React', 'Supabase'],
       status: 'deployed',
     },
-    {
-      id: 2,
-      title: 'Under Construction',
-      description: 'Project details coming soon.',
-      status: 'under-construction',
-    },
-    {
-      id: 3,
-      title: 'Under Construction',
-      description: 'Project details coming soon.',
-      status: 'under-construction',
-    },
   ];
 
   return (
@@ -50,7 +38,9 @@ const Projects = () => {
           <span className="section-kicker">Selected work</span>
           <h2>Recent projects</h2>
         </div>
-        <span className="project-count">{projects.length.toString().padStart(2, '0')} projects</span>
+        <span className="project-count">
+          {projects.length.toString().padStart(2, '0')} {projects.length === 1 ? 'project' : 'projects'}
+        </span>
       </div>
       <div className="projects-grid">
         {projects.map((project) => (

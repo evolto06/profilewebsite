@@ -6,11 +6,14 @@ const Home = () => {
     <section id="home" className="home-section">
       <div className="home-content">
         <div className="home-text">
-          <h2>Hello, I'm Eusef Karl Blancada</h2>
+          <h1>Hello, I'm Eusef Karl Blancada</h1>
           <p>
             I am a 3rd Year BS Computer Science student of University of the Philippines Visayas. An aspiring Software Developer,
             Hobbyist Game Developer, and Low-Level Enthusiast. I am passionate about creating innovative and efficient software solutions and learning about Computer Science.
           </p>
+          <a className="hero-cta" href="#projects">
+            View projects <span aria-hidden="true">↘</span>
+          </a>
           <div className="home-icons">
             <a href="https://github.com/evolto06" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="GitHub profile">
               <FaGithub className="icon" />
