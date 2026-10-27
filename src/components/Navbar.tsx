@@ -1,46 +1,55 @@
 import { useState } from 'react';
 
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+const navLinks: NavLink[] = [
+  { href: '#work', label: '01 Work' },
+  { href: '#stack', label: '02 Stack' },
+  { href: '#about', label: '03 About' },
+];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className="navbar">
-      <div className="nav-container">
+    <header className="site-header">
+      <nav className="nav-container" aria-label="Primary">
+        <a href="#top" className="nav-wordmark" onClick={closeMenu}>
+          eu<span className="accent-text">/</span>blancada
+        </a>
         <button
           type="button"
-          className="nav-logo"
+          className="nav-toggle"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           aria-controls="primary-navigation"
           onClick={() => setMenuOpen((open) => !open)}
         >
-          Eu
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
         </button>
         <ul id="primary-navigation" className={`nav-menu${menuOpen ? ' is-open' : ''}`}>
-          <li className="nav-item">
-            <a href="#home" className="nav-link" onClick={closeMenu}>
-              Home
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#about" className="nav-link" onClick={closeMenu}>
-              About
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#projects" className="nav-link" onClick={closeMenu}>
-              Projects
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#contact" className="nav-link" onClick={closeMenu}>
-              Contact
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className="nav-link" onClick={closeMenu}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="#contact" className="nav-cta" onClick={closeMenu}>
+              Let’s talk
             </a>
           </li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
