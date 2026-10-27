@@ -1,37 +1,70 @@
-import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
 import profileImage from '../assets/profile-image.jpg';
+
+type SocialLink = {
+  label: string;
+  href: string;
+};
+
+const socialLinks: SocialLink[] = [
+  { label: 'GitHub', href: 'https://github.com/evolto06' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/eusefkarl/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/karito.0.0/' },
+  { label: 'Facebook', href: 'https://www.facebook.com/euxef.karl' },
+];
+
+// TODO: set to the résumé PDF URL. The button stays hidden while this is null.
+const resumeUrl: string | null = null;
 
 const Home = () => {
   return (
-    <section id="home" className="home-section">
-      <div className="home-content">
-        <div className="home-text">
-          <h1>Hello, I'm Eusef Karl Blancada</h1>
-          <p>
-            I am a 3rd Year BS Computer Science student of University of the Philippines Visayas. An aspiring Software Developer,
-            Hobbyist Game Developer, and Low-Level Enthusiast. I am passionate about creating innovative and efficient software solutions and learning about Computer Science.
-          </p>
-          <a className="hero-cta" href="#projects">
-            View projects <span aria-hidden="true">↘</span>
+    <section id="top" className="hero">
+      <div className="hero-text">
+        <p className="hero-status">
+          <span className="hero-status-dot" aria-hidden="true" />
+          3rd-year BS Computer Science · UP Visayas
+        </p>
+        <h1>
+          Eusef Karl
+          <br />
+          Blancada<span className="accent-text">.</span>
+        </h1>
+        <p className="hero-tagline">
+          I build software from the <span className="hero-highlight">bare metal</span> up.
+        </p>
+        <p className="hero-bio">
+          Aspiring software developer, hobbyist game developer and low-level enthusiast — from NASM and Rust to
+          full-stack apps and AI-powered tools.
+        </p>
+        <div className="hero-actions">
+          <a href="#work" className="btn btn-accent">
+            See my work <span aria-hidden="true">↘</span>
           </a>
-          <div className="home-icons">
-            <a href="https://github.com/evolto06" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="GitHub profile">
-              <FaGithub className="icon" />
+          {resumeUrl && (
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">
+              Résumé <span aria-hidden="true">↗</span>
             </a>
-            <a href="https://www.linkedin.com/in/eusefkarl/" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="LinkedIn profile">
-              <FaLinkedin className="icon" />
-            </a>
-            <a href="https://www.facebook.com/euxef.karl" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="Facebook profile">
-              <FaFacebook className="icon" />
-            </a>
-            <a href="https://www.instagram.com/karito.0.0/" target="_blank" rel="noopener noreferrer" className="icon-link" aria-label="Instagram profile">
-              <FaInstagram className="icon" />
-            </a>
-          </div>
+          )}
         </div>
-        <div className="home-visual">
-          <div className="home-image-placeholder">
-            <img className="profile-image" src={profileImage} alt="Eusef Karl Blancada" />
+        <div className="hero-links">
+          {socialLinks.map((link) => (
+            <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-link">
+              {link.label} <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className="hero-visual">
+        <div className="hero-photo-offset" aria-hidden="true" />
+        <div className="hero-photo">
+          <img src={profileImage} alt="Portrait of Eusef Karl Blancada" />
+        </div>
+        <div className="hero-badge">
+          <div className="hero-badge-prompt">~ $ whoami</div>
+          <div>
+            builder<span className="accent-text">::</span>low_level
+            <span className="hero-caret accent-text" aria-hidden="true">
+              ▍
+            </span>
           </div>
         </div>
       </div>
