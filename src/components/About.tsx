@@ -1,50 +1,67 @@
-import { FaJava } from 'react-icons/fa';
-import { SiRust, SiTypescript, SiJavascript, SiPython, SiC } from 'react-icons/si';
+type Capability = {
+  index: string;
+  title: string;
+  description: string;
+};
+
+const capabilities: Capability[] = [
+  {
+    index: '02',
+    title: 'Full-stack development',
+    description: 'Frontends and backends end to end — React, TypeScript, Supabase, Firebase.',
+  },
+  {
+    index: '03',
+    title: 'AI engineering & ML',
+    description: 'Designing practical AI-powered tools and building models that learn from data.',
+  },
+  {
+    index: '04',
+    title: 'Agentic coding',
+    description: 'Using AI agents as a force multiplier for generation, review and debugging.',
+  },
+  {
+    index: '05',
+    title: 'Game development',
+    description: 'A hobbyist’s love for game feel, animation and local multiplayer.',
+  },
+];
+
+const gcdLoop = ['  xor  edx, edx', '  div  ecx', '  mov  eax, ecx', '  mov  ecx, edx', '  test ecx, ecx', '  jnz  .loop'].join('\n');
 
 const About = () => {
-  const proficiencies = [
-    { name: 'Rust', Icon: SiRust },
-    { name: 'TypeScript', Icon: SiTypescript },
-    { name: 'JavaScript', Icon: SiJavascript },
-    { name: 'Python', Icon: SiPython },
-    { name: 'C', Icon: SiC },
-    { name: 'Java', Icon: FaJava },
-  ];
-
-  const skills = [
-    { title: 'Full Stack Development', description: 'Experience in building both frontend and backend applications.' },
-    { title: 'Embedded Systems', description: 'Working with microcontrollers and embedded Linux.' },
-    { title: 'Agentic Coding', description: 'Utilizing AI agents to assist in code generation and debugging.' },
-    { title: 'AI Engineering', description: 'Designing practical AI-powered tools and workflows.' },
-    { title: 'Machine Learning', description: 'Building and applying models to learn from data.' },
-  ];
-
   return (
-    <section id="about" className="about-section">
-      <div className="about-container">
-        <h2>About Me</h2>
-        <div className="proficiencies">
-          <h3>Proficiencies</h3>
-          <div className="proficiency-icons">
-            {proficiencies.map((prof, index) => (
-              <div key={index} className="proficiency-item">
-                <prof.Icon className="icon" />
-                <span className="proficiency-name">{prof.name}</span>
-              </div>
-            ))}
+    <section id="about" className="section about-section">
+      <p className="section-kicker">02 — What I do</p>
+      <h2 className="section-title about-title">Comfortable anywhere in the stack.</h2>
+      <div className="capability-grid">
+        <div className="capability-card capability-card-accent">
+          <div className="capability-accent-text">
+            <span className="capability-index">01</span>
+            <h3>
+              Low-level &amp;
+              <br />
+              embedded systems
+            </h3>
+            <p>Assembly, C and Rust — microcontrollers, embedded Linux, and knowing what the machine is actually doing.</p>
           </div>
+          <pre className="code-block">
+            <code>
+              <span className="code-comment">; gcd_asm — euclid</span>
+              {'\n'}
+              <span className="accent-text">.loop:</span>
+              {'\n'}
+              {gcdLoop}
+            </code>
+          </pre>
         </div>
-        <div className="skills">
-          <h3>Skills</h3>
-          <div className="skills-cards">
-            {skills.map((skill, index) => (
-              <div key={index} className="skill-card">
-                <h4>{skill.title}</h4>
-                <p>{skill.description}</p>
-              </div>
-            ))}
+        {capabilities.map((capability) => (
+          <div key={capability.index} className="capability-card">
+            <span className="capability-index">{capability.index}</span>
+            <h3>{capability.title}</h3>
+            <p>{capability.description}</p>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

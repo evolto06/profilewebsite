@@ -690,6 +690,109 @@ textarea {
   color: var(--text);
 }
 
+/* What I do */
+.about-section {
+  padding-top: clamp(96px, 12vw, 160px);
+}
+
+.about-title {
+  max-width: 16ch;
+  margin-bottom: 40px;
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 16px;
+}
+
+.capability-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.capability-index {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--subtle);
+}
+
+.capability-card h3 {
+  margin-top: 48px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.capability-card p {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.capability-card-accent {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 28px;
+  border: 0;
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.capability-accent-text {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.capability-card-accent .capability-index {
+  font-weight: 700;
+  color: var(--on-accent);
+}
+
+.capability-card-accent h3 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.capability-card-accent p {
+  max-width: 36ch;
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--on-accent);
+}
+
+.code-block {
+  flex: 1 1 240px;
+  min-width: 0;
+  align-self: flex-end;
+  overflow-x: auto;
+  padding: 18px 20px;
+  border-radius: var(--radius-sm);
+  background: var(--inset);
+  color: #d4d4d8;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.code-block code {
+  font: inherit;
+}
+
+.code-comment {
+  color: var(--subtle);
+}
+
 /* Motion */
 @media (prefers-reduced-motion: reduce) {
   html {
