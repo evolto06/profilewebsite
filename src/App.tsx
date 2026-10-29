@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Marquee from './components/Marquee';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
@@ -11,6 +12,7 @@ function App() {
       <Navbar />
       <main>
         <Home />
+        <Marquee />
         <About />
         <Projects />
         <Contact />

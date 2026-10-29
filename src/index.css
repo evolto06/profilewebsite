@@ -413,6 +413,49 @@ textarea {
   }
 }
 
+/* Language marquee */
+.marquee {
+  overflow: hidden;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  padding: 22px 0;
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-group,
+.marquee-item {
+  display: flex;
+  gap: 48px;
+}
+
+/* Trailing padding matches the gap so -50% lands exactly on the second group */
+.marquee-group {
+  padding-right: 48px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* Motion */
 @media (prefers-reduced-motion: reduce) {
   html {
