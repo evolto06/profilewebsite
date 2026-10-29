@@ -13,8 +13,8 @@ function App() {
       <main>
         <Home />
         <Marquee />
-        <About />
         <Projects />
+        <About />
         <Contact />
       </main>
       <Footer />
