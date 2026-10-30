@@ -6,7 +6,7 @@
   --inset: #0b0b0e;
   --text: #f4f4f5;
   --muted: #a1a1aa;
-  --subtle: #71717a;
+  --subtle: #7e7e87;
   --border: rgba(255, 255, 255, 0.12);
   --border-hairline: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.22);
@@ -646,7 +646,7 @@ textarea {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: 16px;
   margin-top: 16px;
 }
@@ -657,6 +657,7 @@ textarea {
   gap: 18px;
   min-width: 0;
   min-height: 340px;
+  container-type: inline-size;
   padding: 28px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -673,7 +674,8 @@ textarea {
 }
 
 .project-card h3 {
-  font-size: clamp(25px, 7vw, 30px);
+  /* Scales with the card so "FateGrandCalculator" stays on one line in every column width */
+  font-size: clamp(20px, 8.6cqi, 30px);
   font-weight: 700;
   letter-spacing: -0.03em;
   overflow-wrap: anywhere;
@@ -834,6 +836,7 @@ textarea {
 }
 
 .direct-email {
+  min-height: 44px;
   font-family: var(--font-display);
   font-stretch: 112%;
   font-size: clamp(24px, 3vw, 38px);
