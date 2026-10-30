@@ -435,15 +435,23 @@ textarea {
   animation: marquee 28s linear infinite;
 }
 
-.marquee-group,
-.marquee-item {
-  display: flex;
-  gap: 48px;
-}
-
 /* Trailing padding matches the gap so -50% lands exactly on the second group */
 .marquee-group {
+  display: flex;
+  gap: 48px;
   padding-right: 48px;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+}
+
+.marquee-logo {
+  flex: none;
+  width: 0.85em;
+  height: 0.85em;
 }
 
 @keyframes marquee {
