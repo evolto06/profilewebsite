@@ -4,11 +4,12 @@ Personal portfolio of me, Eusef Karl Blancada, a Computer Science student and as
 
 ## Features
 
-- Responsive monochrome portfolio design
-- Home introduction with profile image and social links
-- Proficiencies and skills section
-- Tuon Ta project card with a static website preview
-- Technology tags for projects
+- Dark, single-accent responsive design built on CSS design tokens
+- Sticky navigation with a mobile menu button
+- Hero with profile photo, `whoami` badge and social links
+- Scrolling language marquee
+- Featured Tuonta card plus a grid of project cards with screenshots
+- Capability grid covering low-level, full-stack, AI, agentic coding and game development
 - Contact form that opens a prefilled email draft
 - Custom `Eu` browser favicon
 - Keyboard focus states and reduced-motion support
@@ -19,7 +20,6 @@ Personal portfolio of me, Eusef Karl Blancada, a Computer Science student and as
 - TypeScript
 - Vite
 - CSS
-- React Icons
 
 ## Getting Started
 
@@ -60,6 +60,7 @@ src/
 		Contact.tsx
 		Footer.tsx
 		Home.tsx
+		Marquee.tsx
 		Navbar.tsx
 		Projects.tsx
 	assets/
@@ -68,7 +69,11 @@ src/
 	main.tsx
 public/
 	favicon-mono.svg
-	tuonta-preview.png
+	projects/
+		damang-damang.png
+		fategrandcalculator.png
+		trapscript.png
+		tuonta-preview.png
 ```
 
 ## Contact Form
