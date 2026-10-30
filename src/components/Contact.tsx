@@ -19,10 +19,24 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact-section">
-      <h2>Contact</h2>
-      <div className="contact-info">
-        <p>Have a project in mind? Send me a message.</p>
+    <section id="contact" className="section contact-section">
+      <div className="contact-panel">
+        <div className="contact-intro">
+          <div>
+            <p className="section-kicker">03 — Contact</p>
+            <h2>
+              Have a project
+              <br />
+              in mind<span className="accent-text">?</span>
+            </h2>
+            <p className="contact-lede">
+              Internships, collaborations, or just talking shop about compilers and games — my inbox is open.
+            </p>
+          </div>
+          <a href="mailto:eusefkarl@gmail.com" className="direct-email">
+            eusefkarl@gmail.com
+          </a>
+        </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-field">
             <label htmlFor="name">Name</label>
@@ -36,14 +50,11 @@ const Contact = () => {
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message" rows={6} required />
           </div>
-          <button type="submit" className="email-link">
-            Open email app
+          <button type="submit" className="btn btn-accent contact-submit">
+            Send via email app <span aria-hidden="true">↗</span>
           </button>
           {status === 'opened' && <p className="form-note" aria-live="polite">Your email app should open with the message ready to send.</p>}
         </form>
-        <a href="mailto:eusefkarl@gmail.com" className="direct-email">
-          eusefkarl@gmail.com
-        </a>
       </div>
     </section>
   );
