@@ -48,7 +48,7 @@ const Contact = () => {
           </div>
           <div className="form-field">
             <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows={6} required />
+            <textarea id="message" name="message" rows={5} required />
           </div>
           <button type="submit" className="btn btn-accent contact-submit">
             Send via email app <span aria-hidden="true">↗</span>

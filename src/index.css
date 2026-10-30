@@ -23,6 +23,7 @@
 
   --content-width: 1240px;
   --gutter: clamp(16px, 4vw, 40px);
+  --page-width: calc(var(--content-width) + 2 * var(--gutter));
   --nav-height: 72px;
 }
 
@@ -44,7 +45,6 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -97,7 +97,7 @@ textarea {
 }
 
 .nav-container {
-  max-width: var(--content-width);
+  max-width: var(--page-width);
   min-height: var(--nav-height);
   margin: 0 auto;
   padding: 0 var(--gutter);
@@ -266,7 +266,7 @@ textarea {
 
 /* Hero */
 .hero {
-  max-width: var(--content-width);
+  max-width: var(--page-width);
   margin: 0 auto;
   padding: clamp(56px, 9vw, 120px) var(--gutter) 72px;
   display: flex;
@@ -458,7 +458,7 @@ textarea {
 
 /* Shared section layout */
 .section {
-  max-width: var(--content-width);
+  max-width: var(--page-width);
   margin: 0 auto;
   padding-left: var(--gutter);
   padding-right: var(--gutter);
@@ -513,6 +513,12 @@ textarea {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background: var(--surface);
+}
+
+/* Flex bases exclude padding, so the card stacks at the same width as the reference */
+.featured-media,
+.featured-body {
+  box-sizing: content-box;
 }
 
 .featured-media {
@@ -910,9 +916,9 @@ textarea {
 }
 
 .footer-container {
-  max-width: var(--content-width);
+  max-width: var(--page-width);
   margin: 0 auto;
-  padding: 18px var(--gutter);
+  padding: 24px var(--gutter);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
