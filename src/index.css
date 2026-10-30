@@ -901,6 +901,30 @@ textarea {
   color: var(--muted);
 }
 
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border-hairline);
+}
+
+.footer-container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 18px var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--subtle);
+}
+
+/* Anchors land below the sticky nav */
+[id] {
+  scroll-margin-top: var(--nav-height);
+}
+
 /* Motion */
 @media (prefers-reduced-motion: reduce) {
   html {
